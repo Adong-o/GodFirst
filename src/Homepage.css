@@ -1,0 +1,95 @@
+.homepage-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .left-section {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .right-section {
+    flex: 1;
+    padding-left: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .subscribe-form {
+    display: flex;
+    align-items: center;
+  }
+  
+  .subscribe-form input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .subscribe-form button {
+    padding: 10px 30px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .right-section img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .homepage-section {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .left-section, .right-section {
+      width: 100%;
+      padding: 0;
+      text-align: center;
+    }
+  
+    .subscribe-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .subscribe-form input {
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .subscribe-text {
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 5px;
+    margin-right: 20px; /* Default margin-right */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .subscribe-text {
+      margin-right: 0; /* Reset margin-right on smaller screens */
+      margin-top: 10px; /* Adjust margin-top for better spacing */
+    }
+  }
+  
+  
+  

@@ -1,0 +1,160 @@
+/*
+.footer {
+    background-color: #e7cccc;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    bottom: -250px;
+  }
+  
+  .footer-logo img {
+    width: 50px;
+  }
+  
+  .footer-social {
+    font-size: 24px;
+  }
+  
+  .footer-social i {
+    margin-right: 10px;
+  }
+  
+  .footer-menu ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-menu li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  .subscription-card {
+    position: absolute;
+    top: -280px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    width: 80%;
+  }
+  
+  .subscription-card h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-card .subscribe-form {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .subscription-card input {
+    padding: 15px;
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .subscription-card button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+  }
+  
+  .subscription-card .policy {
+    font-size: 1rem;
+  }
+  */
+
+  /* Default styles */
+.footer {
+  background-color: #e7cccc;
+  padding: 30px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  bottom: -250px;
+}
+
+.footer-logo img {
+  width: 100px;
+  border-radius: 5px;
+}
+
+.footer-social {
+  font-size: 24px;
+}
+
+.footer-social i {
+  margin-right: 10px;
+}
+
+.footer-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.subscription-card {
+  position: absolute;
+  top: -280px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  width: 80%;
+}
+
+.subscription-card h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.subscription-card .subscribe-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.subscription-card input {
+  padding: 15px;
+  flex: 1;
+  margin-right: 20px;
+}
+
+.subscription-card button {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+}
+
+.subscription-card .policy {
+  font-size: 1rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .footer-menu {
+    margin-top: 20px;
+  }
+
+  .subscription-card {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+  }
+}
