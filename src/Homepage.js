@@ -1,39 +1,17 @@
-/*
-import React from 'react';
-import './Homepage.css'; 
-
-function Homepage() {
-  return (
-    <div className="homepage-section">
-      <div className="left-section">
-        <h1 className="title">Enhanced Every Day: Elevating Your Daily Devotionals</h1>
-        <h2 className="subtitle">Unveiling Deeper Insights and Inspiration with Every Edition</h2>
-        <div className="subscribe-form">
-          <input type="email" placeholder="Enter your email" />
-          <button>Subscribe</button>
-        </div>
-        <div className="subscribe-text">* By clicking <strong>“Subscribe”</strong> button, you agree to our Terms and that you have read our <strong>Data Use Policy.</strong></div>
-      </div>
-      <br/>
-      <div className="right-section">
-        <img src="https://i.postimg.cc/9Qqs4rkv/cross-ezgif-com-webp-to-jpg-converter-removebg-preview.png
-" alt="Newsletter" />
-      </div>
-    </div>
-  );
-}
-
-export default Homepage;
-*/
-import React, { useState } from 'react';
-import './Homepage.css'; // Import your CSS file for styling
+import React, { useState, useEffect } from 'react';
+import './Homepage.css';
 import '@fortawesome/fontawesome-free/css/all.css';
-
 
 function Homepage() {
   const [email, setEmail] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
 
-  const handleSubscribe = async () => {
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch('/api/subscribe', {
         method: 'POST',
@@ -57,28 +35,58 @@ function Homepage() {
   };
 
   return (
-    <div className="homepage-section">
-      <div className="left-section">
-        <h1 className="title">Enhanced Every Day: Elevating Your Daily Devotionals</h1>
-        <h2 className="subtitle">Unveiling Deeper Insights and Inspiration with Every Edition</h2>
-        <div className="subscribe-form">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <button onClick={handleSubscribe}>Subscribe</button>
-        </div>
-        <div className="subscribe-text">
-          * By clicking <strong>“Subscribe”</strong> button, you agree to our Terms and that you have read our <strong>Data Use Policy.</strong>
+    <section className={`homepage-section ${isVisible ? 'visible' : ''}`}>
+      <div className="container">
+        <div className="content-grid">
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Daily Wisdom for
+              <span className="highlight"> Modern Life</span>
+            </h1>
+            <p className="hero-subtitle">
+              Join thousands finding clarity and purpose through daily scripture readings
+            </p>
+            
+            <form className="subscribe-form" onSubmit={handleSubmit}>
+              <div className="input-group">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  aria-label="Email address"
+                  required
+                />
+                <button type="submit" className="btn-primary">
+                  Start Free
+                </button>
+              </div>
+              <p className="form-note">
+                ✨ Join 10,000+ subscribers receiving daily inspiration
+              </p>
+            </form>
+          </div>
+
+          <div className="features-grid">
+            <div className="feature-card">
+              <span className="feature-icon">📱</span>
+              <h3>Daily Delivery</h3>
+              <p>Receive curated verses every morning</p>
+            </div>
+            <div className="feature-card">
+              <span className="feature-icon">💭</span>
+              <h3>Deep Insights</h3>
+              <p>Thoughtful commentary and context</p>
+            </div>
+            <div className="feature-card">
+              <span className="feature-icon">🌟</span>
+              <h3>Personal Growth</h3>
+              <p>Transform your daily routine</p>
+            </div>
+          </div>
         </div>
       </div>
-      <br />
-      <div className="right-section">
-        <img src="https://i.postimg.cc/9Qqs4rkv/cross-ezgif-com-webp-to-jpg-converter-removebg-preview.png" alt="Newsletter" />
-      </div>
-    </div>
+    </section>
   );
 }
 

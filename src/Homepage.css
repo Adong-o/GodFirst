@@ -1,95 +1,248 @@
 .homepage-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px;
-  }
-  
-  .left-section {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  .right-section {
-    flex: 1;
-    padding-left: 20px;
-  }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-  }
-  
-  .subscribe-form {
-    display: flex;
-    align-items: center;
-  }
-  
-  .subscribe-form input {
-    padding: 10px;
-    width: 300px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .subscribe-form button {
-    padding: 10px 30px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .right-section img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .homepage-section {
-      flex-direction: column;
-      padding: 20px;
-    }
-  
-    .left-section, .right-section {
-      width: 100%;
-      padding: 0;
-      text-align: center;
-    }
-  
-    .subscribe-form {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .subscribe-form input {
-      width: 100%;
-      margin: 0 0 10px 0;
-    }
+  min-height: 100vh;
+  padding: calc(var(--spacing-unit) * 10) 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+}
+
+.homepage-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--spacing-unit) * 8);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+  margin-bottom: calc(var(--spacing-unit) * 3);
+  color: var(--primary-color);
+}
+
+.hero-title .highlight {
+  background: linear-gradient(120deg, var(--accent-color) 0%, #2ecc71 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  color: var(--secondary-color);
+  margin-bottom: calc(var(--spacing-unit) * 4);
+}
+
+.subscribe-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-unit);
+  margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.input-group input {
+  flex: 1;
+  padding: calc(var(--spacing-unit) * 2);
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.subscribe-form button {
+  padding: 16px 32px;
+  background: #2d3436;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary {
+  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.subscribe-form button:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background: var(--accent-color);
+}
+
+.feature-card {
+  background: white;
+  padding: calc(var(--spacing-unit) * 4);
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-unit);
+  display: block;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: calc(var(--spacing-unit) * 3);
+  margin-top: calc(var(--spacing-unit) * 8);
+}
+
+.highlight {
+  font-size: 1.1rem;
+  color: #2d3436;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
   }
 
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .hero-content {
+    padding: 0 var(--spacing-unit);
+  }
+}
+
+@media (max-width: 480px) {
+  .homepage-section {
+    padding: calc(var(--spacing-unit) * 6) 0;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.left-section {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.right-section {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.right-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .homepage-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .left-section, .right-section {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .subscribe-form input {
+    width: 100%;
+    margin: 0 0 10px 0;
+  }
+}
+
+.subscribe-text {
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 5px;
+  margin-right: 20px; /* Default margin-right */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   .subscribe-text {
-    font-size: 0.9rem;
-    color: #777;
-    margin-top: 5px;
-    margin-right: 20px; /* Default margin-right */
+    margin-right: 0; /* Reset margin-right on smaller screens */
+    margin-top: 10px; /* Adjust margin-top for better spacing */
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .subscribe-text {
-      margin-right: 0; /* Reset margin-right on smaller screens */
-      margin-top: 10px; /* Adjust margin-top for better spacing */
-    }
-  }
-  
-  
-  
+}
+
+
