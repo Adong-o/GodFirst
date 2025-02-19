@@ -1,0 +1,48 @@
+:root {
+  /* Colors */
+  --primary: #1a365d;
+  --primary-light: #2c5282;
+  --secondary: #805ad5;
+  --accent: #f6ad55;
+  --background: #ffffff;
+  --text: #2d3748;
+  --text-light: #718096;
+  --success: #48bb78;
+  --error: #f56565;
+
+  /* Typography */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms ease;
+  --transition-slow: 500ms ease;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+}
+
+/* Dark theme variables */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a202c;
+    --text: #e2e8f0;
+    --text-light: #a0aec0;
+  }
+}
